@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal Retreat – A Luxurious Rental Site</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="brand" aria-label="Royal Retreat Home">
+          <span class="brand-title">Royal Retreat</span>
+          <span class="brand-sub">A Luxurious Rental Site</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="listings.html">Listings</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link nav-cta" href="auth.html">Login / Signup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-bg">
+        <div class="container">
+          <div class="hero-card">
+            <h1>Find your next royal retreat</h1>
+            <p class="muted">
+              Handpicked luxury villas, penthouses, and suites — curated for
+              elegance and comfort.
+            </p>
+            <form id="home-search" aria-label="Search">
+              <div class="search-grid">
+                <input
+                  id="home-location"
+                  class="input"
+                  type="text"
+                  placeholder="Location (e.g., Dubai)"
+                />
+                <select id="home-type" class="select">
+                  <option value="">Any Type</option>
+                  <option>Apartment</option>
+                  <option>Villa</option>
+                  <option>House</option>
+                  <option>Penthouse</option>
+                  <option>Loft</option>
+                  <option>Chalet</option>
+                </select>
+                <select id="home-price" class="select">
+                  <option value="">Any Price</option>
+                  <option value="lt1000">Under $1000</option>
+                  <option value="1000-2000">$1000 - $2000</option>
+                  <option value="gt2000">Over $2000</option>
+                </select>
+                <button class="btn" type="submit">Search</button>
+                <a class="btn btn-ghost" href="listings.html">Browse All</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Featured Properties</h2>
+          <p class="muted">A glimpse into our finest stays.</p>
+          <div id="featured-grid" class="grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="grid">
+            <div class="card" style="padding: 16px">
+              <h3 style="margin: 0 0 6px 0">Curated Luxury</h3>
+              <p class="muted">
+                Every listing meets strict criteria for design, amenities, and
+                setting.
+              </p>
+            </div>
+            <div class="card" style="padding: 16px">
+              <h3 style="margin: 0 0 6px 0">Seamless Service</h3>
+              <p class="muted">
+                Concierge support from search to check-out for a frictionless
+                stay.
+              </p>
+            </div>
+            <div class="card" style="padding: 16px">
+              <h3 style="margin: 0 0 6px 0">Trusted Community</h3>
+              <p class="muted">
+                Verified hosts and respectful guests for peace of mind.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Aesthetic Gallery</h2>
+          <p class="muted">Immerse in refined spaces around the globe.</p>
+          <div class="gallery-grid">
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1200&auto=format&fit=crop"
+              alt="Poolside villa"
+            />
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200&auto=format&fit=crop"
+              alt="Modern penthouse"
+            />
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=1200&auto=format&fit=crop"
+              alt="Cozy chalet"
+            />
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop"
+              alt="Santorini view"
+            />
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1502003148287-a82ef80a6abc?q=80&w=1200&auto=format&fit=crop"
+              alt="City skyline loft"
+            />
+            <img
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1501183007986-d0d080b147f9?q=80&w=1200&auto=format&fit=crop"
+              alt="Beach house"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">What our guests say</h2>
+          <div class="grid">
+            <div class="testimonial card" style="padding: 16px">
+              <p>
+                “Unforgettable! The concierge made everything effortless. The
+                villa was immaculate.”
+              </p>
+              <div class="muted">— Amelia, Dubai</div>
+            </div>
+            <div class="testimonial card" style="padding: 16px">
+              <p>
+                “Elegant interiors and prime location. A true luxury
+                experience.”
+              </p>
+              <div class="muted">— Daniel, London</div>
+            </div>
+            <div class="testimonial card" style="padding: 16px">
+              <p>
+                “The penthouse views were breathtaking. Booking felt premium
+                from start to finish.”
+              </p>
+              <div class="muted">— Sofia, New York</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="cta">
+            <div>
+              <h2 class="section-title" style="margin: 0">
+                Ready for your Royal Retreat?
+              </h2>
+              <p class="muted" style="margin: 6px 0 0 0">
+                Discover handpicked stays tailored to your taste.
+              </p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center">
+              <a href="listings.html" class="btn">Explore Listings</a>
+              <a href="auth.html" class="btn btn-ghost">Join as Lister</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Royal Retreat. All rights reserved.</div>
+        <div>Crafted with elegance.</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

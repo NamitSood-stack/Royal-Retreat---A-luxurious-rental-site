@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us • Royal Retreat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="brand" aria-label="Royal Retreat Home">
+          <span class="brand-title">Royal Retreat</span>
+          <span class="brand-sub">A Luxurious Rental Site</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="listings.html">Listings</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link nav-cta" href="auth.html">Login / Signup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <h1 class="section-title">Our Story</h1>
+        <p class="muted">
+          Royal Retreat curates the world’s most exquisite rental properties and
+          connects discerning travelers with trusted hosts. We combine human
+          touch with thoughtful technology to deliver an effortless, elevated
+          experience.
+        </p>
+        <div class="grid" style="margin-top: 16px">
+          <div class="card" style="padding: 16px">
+            <h3 style="margin-top: 0">Curation</h3>
+            <p>
+              Every property is reviewed for design, comfort, and location to
+              meet our high standards.
+            </p>
+          </div>
+          <div class="card" style="padding: 16px">
+            <h3 style="margin-top: 0">Concierge</h3>
+            <p>
+              From bookings to recommendations, our support ensures a seamless
+              stay from start to finish.
+            </p>
+          </div>
+          <div class="card" style="padding: 16px">
+            <h3 style="margin-top: 0">Community</h3>
+            <p>
+              We foster a network of verified listers and respectful guests who
+              value refinement.
+            </p>
+          </div>
+        </div>
+
+        <section class="section" style="padding-top: 24px">
+          <h2 class="section-title">By the numbers</h2>
+          <div class="grid">
+            <div class="card" style="padding: 16px; text-align: center">
+              <div class="section-title" style="margin: 0">500+</div>
+              <div class="muted">Luxury listings</div>
+            </div>
+            <div class="card" style="padding: 16px; text-align: center">
+              <div class="section-title" style="margin: 0">95%</div>
+              <div class="muted">5-star reviews</div>
+            </div>
+            <div class="card" style="padding: 16px; text-align: center">
+              <div class="section-title" style="margin: 0">40+</div>
+              <div class="muted">Destinations</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" style="padding-top: 0">
+          <h2 class="section-title">Our journey</h2>
+          <div class="card" style="padding: 16px">
+            <ul style="margin: 0; padding-left: 18px">
+              <li>
+                <strong>2019</strong> — Founded with a vision for elevated
+                rentals
+              </li>
+              <li>
+                <strong>2021</strong> — Expanded concierge and verified lister
+                network
+              </li>
+              <li>
+                <strong>2023</strong> — Reached 500+ curated properties globally
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" style="padding-top: 0">
+          <h2 class="section-title">Team</h2>
+          <div class="grid">
+            <div class="card" style="padding: 16px">
+              <h3 style="margin-top: 0">Ava Laurent</h3>
+              <p class="muted">Founder & CEO</p>
+              <p>
+                Hospitality leader with a passion for design and guest
+                experience.
+              </p>
+            </div>
+            <div class="card" style="padding: 16px">
+              <h3 style="margin-top: 0">Liam Chen</h3>
+              <p class="muted">Head of Curation</p>
+              <p>
+                Architect turned curator, ensuring our portfolio meets exacting
+                standards.
+              </p>
+            </div>
+            <div class="card" style="padding: 16px">
+              <h3 style="margin-top: 0">Maya Singh</h3>
+              <p class="muted">Guest Services Lead</p>
+              <p>
+                Obsessed with details, elevating every step of your journey.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Royal Retreat. All rights reserved.</div>
+        <div>Crafted with elegance.</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

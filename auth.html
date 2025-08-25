@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup • Royal Retreat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="brand" aria-label="Royal Retreat Home">
+          <span class="brand-title">Royal Retreat</span>
+          <span class="brand-sub">A Luxurious Rental Site</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="listings.html">Listings</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link nav-cta" href="auth.html">Login / Signup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <h1 class="section-title">Access Your Account</h1>
+        <div class="tabs" role="tablist">
+          <button
+            id="tab-renter"
+            class="tab-btn"
+            role="tab"
+            aria-controls="panel-renter"
+          >
+            Renter
+          </button>
+          <button
+            id="tab-lister"
+            class="tab-btn"
+            role="tab"
+            aria-controls="panel-lister"
+          >
+            Lister
+          </button>
+        </div>
+
+        <div id="panel-renter" role="tabpanel">
+          <div class="auth-grid">
+            <section class="form-card">
+              <div class="tabs" data-toggle-group>
+                <button class="tab-btn" data-toggle="login">Login</button>
+                <button class="tab-btn" data-toggle="signup">Signup</button>
+              </div>
+              <form class="form-login" data-validate="auth">
+                <div class="field">
+                  <label class="label">Email</label>
+                  <input
+                    type="email"
+                    class="input"
+                    placeholder="renter@example.com"
+                    required
+                  />
+                  <div class="error" data-error="email"></div>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <input
+                    type="password"
+                    class="input"
+                    placeholder="••••••••"
+                    required
+                  />
+                  <div class="error" data-error="password"></div>
+                </div>
+                <button class="btn" type="submit">Login</button>
+              </form>
+              <form class="form-signup hide" data-validate="auth">
+                <div class="field">
+                  <label class="label">Full Name</label>
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <input
+                    type="email"
+                    class="input"
+                    placeholder="renter@example.com"
+                    required
+                  />
+                  <div class="error" data-error="email"></div>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <input
+                    type="password"
+                    class="input"
+                    placeholder="Min 8 chars incl. a number"
+                    required
+                  />
+                  <div class="error" data-error="password"></div>
+                </div>
+                <button class="btn" type="submit">Create Account</button>
+              </form>
+            </section>
+
+            <section class="form-card">
+              <h3 style="margin-top: 0">Benefits for Renters</h3>
+              <ul>
+                <li>Curated luxury stays</li>
+                <li>Secure bookings</li>
+                <li>Priority concierge</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <div id="panel-lister" class="hide" role="tabpanel">
+          <div class="auth-grid">
+            <section class="form-card">
+              <div class="tabs" data-toggle-group>
+                <button class="tab-btn" data-toggle="login">Login</button>
+                <button class="tab-btn" data-toggle="signup">Signup</button>
+              </div>
+              <form class="form-login" data-validate="auth">
+                <div class="field">
+                  <label class="label">Business Email</label>
+                  <input
+                    type="email"
+                    class="input"
+                    placeholder="lister@royal.com"
+                    required
+                  />
+                  <div class="error" data-error="email"></div>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <input
+                    type="password"
+                    class="input"
+                    placeholder="••••••••"
+                    required
+                  />
+                  <div class="error" data-error="password"></div>
+                </div>
+                <button class="btn" type="submit">Login</button>
+              </form>
+              <form class="form-signup hide" data-validate="auth">
+                <div class="field">
+                  <label class="label">Company Name</label>
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Your Company"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label class="label">Business Email</label>
+                  <input
+                    type="email"
+                    class="input"
+                    placeholder="lister@royal.com"
+                    required
+                  />
+                  <div class="error" data-error="email"></div>
+                </div>
+                <div class="field">
+                  <label class="label">Password</label>
+                  <input
+                    type="password"
+                    class="input"
+                    placeholder="Min 8 chars incl. a number"
+                    required
+                  />
+                  <div class="error" data-error="password"></div>
+                </div>
+                <button class="btn" type="submit">Create Lister Account</button>
+              </form>
+            </section>
+
+            <section class="form-card">
+              <h3 style="margin-top: 0">Benefits for Listers</h3>
+              <ul>
+                <li>Premium audience reach</li>
+                <li>Verified renter network</li>
+                <li>Dedicated support</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Royal Retreat. All rights reserved.</div>
+        <div>Crafted with elegance.</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
