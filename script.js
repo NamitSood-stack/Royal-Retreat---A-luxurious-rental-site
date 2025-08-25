@@ -26,6 +26,15 @@ const PROPERTIES = [
 // Utilities
 function $(selector, root = document) { return root.querySelector(selector); }
 function $all(selector, root = document) { return Array.from(root.querySelectorAll(selector)); }
+function normalizeText(value) {
+  return (value || '')
+    .toString()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // strip diacritics
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '') // remove spaces and punctuation
+    .trim();
+}
 
 // Navbar active state
 function setActiveNav() {
@@ -72,12 +81,14 @@ function setupListingFilters() {
   const priceSelect = $('#filter-price');
 
   function applyFiltersFromControls() {
-    const qLocation = (locationInput.value || '').trim().toLowerCase();
+    const qLocation = (locationInput.value || '').trim();
+    const qLocationNorm = normalizeText(qLocation);
     const qType = (typeSelect.value || '').trim();
     const qPrice = (priceSelect.value || '').trim();
 
     const filtered = PROPERTIES.filter(p => {
-      const matchesLocation = qLocation ? p.location.toLowerCase().includes(qLocation) : true;
+      const locationNorm = normalizeText(p.location);
+      const matchesLocation = qLocationNorm ? locationNorm.includes(qLocationNorm) : true;
       const matchesType = qType ? p.type === qType : true;
       let matchesPrice = true;
       if (qPrice === 'lt1000') matchesPrice = p.price < 1000;
