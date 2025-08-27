@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Listings • Royal Retreat</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand" aria-label="Royal Retreat Home">
-        <span class="brand-title">Royal Retreat</span>
-        <span class="brand-sub">A Luxurious Rental Site</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="listings.html">Listings</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-        <a class="nav-link nav-cta" href="auth.html">Login / Signup</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="section">
-    <div class="container">
-      <h1 class="section-title">Browse Properties</h1>
-      <p class="muted">Filter by location, type, and price to find your perfect stay.</p>
-
-      <form id="filters" class="hero-card" style="padding: 20px; margin-bottom: 20px;">
-        <div class="search-grid">
-          <input id="filter-location" class="input" type="text" placeholder="Location" />
-          <select id="filter-type" class="select">
-            <option value="">Any Type</option>
-            <option>Apartment</option>
-            <option>Villa</option>
-            <option>House</option>
-            <option>Penthouse</option>
-            <option>Loft</option>
-            <option>Chalet</option>
-          </select>
-          <select id="filter-price" class="select">
-            <option value="">Any Price</option>
-            <option value="lt1000">Under $1000</option>
-            <option value="1000-2000">$1000 - $2000</option>
-            <option value="gt2000">Over $2000</option>
-          </select>
-          <button class="btn" type="button" id="apply-filters">Apply</button>
-          <button class="btn btn-ghost" type="button" id="reset-filters">Reset</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listings • Royal Retreat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="nav-left">
+          <a href="index.html" class="brand" aria-label="Royal Retreat Home">
+            <span class="brand-title">Royal Retreat</span>
+            <span class="brand-sub">A Luxurious Rental Site</span>
+          </a>
+          <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <span></span>
+          </button>
         </div>
-      </form>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="listings.html">Listings</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link nav-cta" href="auth.html">Login / Signup</a>
+        </nav>
+      </div>
+    </header>
 
-      <div id="listing-grid" class="grid" aria-live="polite"></div>
-    </div>
-  </main>
+    <main class="section">
+      <div class="container">
+        <h1 class="section-title">Browse Properties</h1>
+        <p class="muted">
+          Filter by location, type, and price to find your perfect stay.
+        </p>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Royal Retreat. All rights reserved.</div>
-      <div>Crafted with elegance.</div>
-    </div>
-  </footer>
+        <form
+          id="filters"
+          class="hero-card"
+          style="padding: 20px; margin-bottom: 20px"
+        >
+          <div class="search-grid">
+            <input
+              id="filter-location"
+              class="input"
+              type="text"
+              placeholder="Location"
+            />
+            <select id="filter-type" class="select">
+              <option value="">Any Type</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>House</option>
+              <option>Penthouse</option>
+              <option>Loft</option>
+              <option>Chalet</option>
+            </select>
+            <select id="filter-price" class="select">
+              <option value="">Any Price</option>
+              <option value="lt1000">Under $1000</option>
+              <option value="1000-2000">$1000 - $2000</option>
+              <option value="gt2000">Over $2000</option>
+            </select>
+            <button class="btn" type="button" id="apply-filters">Apply</button>
+            <button class="btn btn-ghost" type="button" id="reset-filters">
+              Reset
+            </button>
+          </div>
+        </form>
 
-  <script src="script.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
+        <div id="listing-grid" class="grid" aria-live="polite"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Royal Retreat. All rights reserved.</div>
+        <div>Crafted with elegance.</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
-
-

@@ -9,10 +9,15 @@
   <body>
     <header class="navbar">
       <div class="container nav-inner">
-        <a href="index.html" class="brand" aria-label="Royal Retreat Home">
-          <span class="brand-title">Royal Retreat</span>
-          <span class="brand-sub">A Luxurious Rental Site</span>
-        </a>
+        <div class="nav-left">
+          <a href="index.html" class="brand" aria-label="Royal Retreat Home">
+            <span class="brand-title">Royal Retreat</span>
+            <span class="brand-sub">A Luxurious Rental Site</span>
+          </a>
+          <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <span></span>
+          </button>
+        </div>
         <nav class="nav-links" aria-label="Primary">
           <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link" href="listings.html">Listings</a>
@@ -24,23 +29,14 @@
     </header>
 
     <main>
-      <section class="video-hero">
-        <div class="video-wrap">
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="https://images.unsplash.com/photo-1505691723518-36a5ac3b2d52?q=80&w=1600&auto=format&fit=crop"
-          >
-            <source
-              src="https://cdn.coverr.co/videos/coverr-luxury-hotel-lobby-7845/1080p.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div class="overlay"></div>
-          <div class="headline">
+      <section class="hero hero-bg">
+        <div class="container">
+          <div class="hero-card">
             <h1>Concierge-level support, wherever you are</h1>
+            <p class="muted">
+              Reach out to our team for bookings, listings, or general
+              assistance.
+            </p>
           </div>
         </div>
       </section>
