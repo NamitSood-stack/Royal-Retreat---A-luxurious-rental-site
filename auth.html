@@ -46,13 +46,22 @@
         </div>
 
         <div id="panel-renter" role="tabpanel">
-          <div class="auth-grid">
-            <section class="form-card">
+          <div class="auth-split">
+            <section class="auth-pane">
               <div class="tabs" data-toggle-group>
                 <button class="tab-btn" data-toggle="login">Login</button>
                 <button class="tab-btn" data-toggle="signup">Signup</button>
               </div>
               <form class="form-login" data-validate="auth">
+                <div class="field">
+                  <label class="label">Full name</label>
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Amélie Laurent"
+                    required
+                  />
+                </div>
                 <div class="field">
                   <label class="label">Email</label>
                   <input
@@ -68,20 +77,20 @@
                   <input
                     type="password"
                     class="input"
-                    placeholder="••••••••"
+                    placeholder="Min 8 chars incl. a number"
                     required
                   />
                   <div class="error" data-error="password"></div>
                 </div>
-                <button class="btn" type="submit">Login</button>
+                <button class="btn" type="submit">Submit</button>
               </form>
               <form class="form-signup hide" data-validate="auth">
                 <div class="field">
-                  <label class="label">Full Name</label>
+                  <label class="label">Full name</label>
                   <input
                     type="text"
                     class="input"
-                    placeholder="Your Name"
+                    placeholder="Amélie Laurent"
                     required
                   />
                 </div>
@@ -107,22 +116,26 @@
                 </div>
                 <button class="btn" type="submit">Create Account</button>
               </form>
+              <div class="auth-social">
+                <button class="btn-ghost" type="button"> Apple</button>
+                <button class="btn-ghost" type="button">G Google</button>
+              </div>
             </section>
 
-            <section class="form-card">
-              <h3 style="margin-top: 0">Benefits for Renters</h3>
-              <ul>
-                <li>Curated luxury stays</li>
-                <li>Secure bookings</li>
-                <li>Priority concierge</li>
-              </ul>
-            </section>
+            <aside class="auth-visual">
+              <img
+                src="https://images.unsplash.com/photo-1559136652-1b9f8d2f0f5c?q=80&w=1600&auto=format&fit=crop"
+                alt="Team collaborating"
+              />
+              <div class="overlay"></div>
+              <div class="chip">30-day free trial</div>
+            </aside>
           </div>
         </div>
 
         <div id="panel-lister" class="hide" role="tabpanel">
-          <div class="auth-grid">
-            <section class="form-card">
+          <div class="auth-split">
+            <section class="auth-pane">
               <div class="tabs" data-toggle-group>
                 <button class="tab-btn" data-toggle="login">Login</button>
                 <button class="tab-btn" data-toggle="signup">Signup</button>
@@ -184,14 +197,14 @@
               </form>
             </section>
 
-            <section class="form-card">
-              <h3 style="margin-top: 0">Benefits for Listers</h3>
-              <ul>
-                <li>Premium audience reach</li>
-                <li>Verified renter network</li>
-                <li>Dedicated support</li>
-              </ul>
-            </section>
+            <aside class="auth-visual">
+              <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop"
+                alt="Business meeting"
+              />
+              <div class="overlay"></div>
+              <div class="chip">Premium audience</div>
+            </aside>
           </div>
         </div>
       </div>
