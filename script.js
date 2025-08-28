@@ -57,7 +57,7 @@ function renderProperties(containerId, data) {
     return;
   }
   container.innerHTML = data.map(p => `
-    <article class="card" aria-label="${p.title}">
+    <article class="card" aria-label="${p.title}" data-prop-id="${p.id}">
       <img class="card-img" src="${p.image}" alt="${p.title}"/>
       <div class="card-body">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
@@ -69,6 +69,7 @@ function renderProperties(containerId, data) {
       </div>
     </article>
   `).join('');
+  attachInquiryHandlers(containerId, data);
 }
 
 // Filtering logic on listings page
@@ -215,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFeatured();
   setupListingFilters();
   setupAuth();
+  ensureInquiryModal();
   // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
@@ -225,5 +227,80 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+// Inquiry Modal
+function ensureInquiryModal() {
+  if (document.getElementById('inquiry-backdrop')) return;
+  const backdrop = document.createElement('div');
+  backdrop.id = 'inquiry-backdrop';
+  backdrop.className = 'modal-backdrop';
+  backdrop.innerHTML = `
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="inquiry-title">
+      <div class="modal-header">
+        <h3 id="inquiry-title" class="modal-title">Send Inquiry</h3>
+        <button type="button" class="modal-close" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+          <label class="label">Your Name</label>
+          <input type="text" id="inq-name" class="input" placeholder="Your name" />
+        </div>
+        <div class="field">
+          <label class="label">Your Email</label>
+          <input type="email" id="inq-email" class="input" placeholder="you@example.com" />
+        </div>
+        <div class="field">
+          <label class="label">Message</label>
+          <textarea id="inq-message" class="input" rows="4" placeholder="I'd like to know more about this property."></textarea>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="inq-cancel">Cancel</button>
+        <button type="button" class="btn" id="inq-send">Send Email</button>
+      </div>
+    </div>`;
+  document.body.appendChild(backdrop);
+
+  function closeModal() { backdrop.classList.remove('open'); }
+  backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+  backdrop.querySelector('.modal-close').addEventListener('click', closeModal);
+  backdrop.querySelector('#inq-cancel').addEventListener('click', closeModal);
+
+  backdrop.querySelector('#inq-send').addEventListener('click', () => {
+    const name = (document.getElementById('inq-name').value || '').trim();
+    const email = (document.getElementById('inq-email').value || '').trim();
+    const message = (document.getElementById('inq-message').value || '').trim();
+    const subject = encodeURIComponent(backdrop.getAttribute('data-prop-title') || 'Property Inquiry');
+    const bodyLines = [
+      name ? `Name: ${name}` : '',
+      email ? `Email: ${email}` : '',
+      '',
+      message || 'Hello, I would like to inquire about this property.'
+    ].filter(Boolean);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:concierge@royalretreat.example?subject=${subject}&body=${body}`;
+  });
+}
+
+function openInquiryModalForProperty(property) {
+  const backdrop = document.getElementById('inquiry-backdrop');
+  if (!backdrop) return;
+  backdrop.setAttribute('data-prop-id', String(property.id));
+  backdrop.setAttribute('data-prop-title', `Inquiry: ${property.title}`);
+  const msg = document.getElementById('inq-message');
+  if (msg) msg.value = `Hi, I'm interested in ${property.title} in ${property.location} (${property.beds} bd • ${property.baths} ba) priced at $${property.price}/night. Please share availability and next steps.`;
+  backdrop.classList.add('open');
+}
+
+function attachInquiryHandlers(containerId, data) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.querySelectorAll('article.card').forEach(card => {
+    const id = Number(card.getAttribute('data-prop-id'));
+    const property = data.find(p => p.id === id);
+    if (!property) return;
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => openInquiryModalForProperty(property));
+  });
+}
 
 
